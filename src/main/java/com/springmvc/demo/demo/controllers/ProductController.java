@@ -1,9 +1,6 @@
 package com.springmvc.demo.demo.controllers;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -68,7 +65,7 @@ public class ProductController {
 			
 			productReponsitory.save(findProduct);
 		}
-		
+		// redirect to product page
 		return "redirect:/products/getProductsByCategoryID/" + product.getCategoryID();		
 	}
 }
