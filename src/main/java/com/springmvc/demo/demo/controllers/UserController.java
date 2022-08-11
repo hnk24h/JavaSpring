@@ -4,6 +4,7 @@ import com.springmvc.demo.demo.entity.User;
 import com.springmvc.demo.demo.models.UserModel;
 import com.springmvc.demo.demo.reponsitories.UserRepository;
 import com.springmvc.demo.demo.services.UserService;
+import com.springmvc.demo.demo.services.implement.UserServiceImplement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ public class UserController {
 //    @Autowired
 //    private UserRepository userRepository;
     @Autowired(required = true)
-    private UserService userService;
+    private UserServiceImplement userService;
 //    @GetMapping("/")
 //    // Trả về Model là một List<UserModel>
 //    public List<UserModel> getUserList() {
@@ -25,7 +26,7 @@ public class UserController {
 //        return userService.getUserList();
 //    }
     @GetMapping("/list")
-    public List<User> getAllUser() {
+    public List<UserModel> getAllUser() {
         System.out.println("hello word");
         return userService.getAllUser();
 //        return userRepository.findAll();
